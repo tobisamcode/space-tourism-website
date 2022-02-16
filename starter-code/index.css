@@ -103,6 +103,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: min-content 1fr;
+    overflow-x: hidden;
 }
 
 
@@ -400,6 +401,7 @@ select {
         padding: min(20rem, 15vh) 2rem;
         margin: 0;
         flex-direction: column;
+        transform: translateX(100%);
     }
     .mobile-nav-toggle {
         display: block;
