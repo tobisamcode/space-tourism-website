@@ -378,7 +378,7 @@ select {
 
 .primary-header {
     justify-content: space-between;
-    -ms-grid-column-align: center;
+    align-items: center;
 }
 
 .primary-navigation {
@@ -465,6 +465,24 @@ select {
 @media (min-width: 35em) and (max-width: 44.999em) {
     .primary-navigation a>span {
         display: none;
+    }
+}
+
+@media (min-width: 45em) {
+    .primary-header {
+        position: relative;
+    }
+    .primary-header::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 1px;
+        background: red;
+        width: 10%;
+        left: 6rem;
+    }
+    .primary-navigation {
+        margin-block: 2rem;
     }
 }
 
