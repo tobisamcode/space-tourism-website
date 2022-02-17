@@ -360,7 +360,7 @@ select {
     background: hsl( var(--clr-white) / .1);
     border-radius: 50%;
     opacity: 0;
-    transition: opacity 500ms linear, transform 750ms ease-in-out;
+    transition: opacity 2s linear, transform 2s ease-in-out;
 }
 
 .large-button:hover::after,
@@ -369,13 +369,35 @@ select {
     transform: scale(1.5);
 }
 
+
+/*          Primary Header          */
+
+.logo {
+    margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+    justify-content: space-between;
+    -ms-grid-column-align: center;
+}
+
 .primary-navigation {
+    --gap: 3rem;
     --underline-gap: 2rem;
     list-style: none;
     padding: 0;
     margin: 0;
     background: hsl( var(--clr-white) / .05);
     backdrop-filter: blur(1.5rem);
+}
+
+.primary-navigation a {
+    text-decoration: none;
+}
+
+.primary-navigation a>span {
+    font-weight: 700;
+    margin-right: .5em;
 }
 
 .mobile-nav-toggle {
@@ -407,6 +429,9 @@ select {
     .primary-navigation[data-visible="true"] {
         transform: translateX(0);
     }
+    .primary-navigation.underline-indicators>.active {
+        border: 0;
+    }
     .mobile-nav-toggle {
         display: block;
         position: absolute;
@@ -415,24 +440,29 @@ select {
         top: 2rem;
         background: transparent;
         background-image: url(./assets/shared/icon-hamburger.svg);
+        background-position: center;
         background-repeat: no-repeat;
         width: 1.5rem;
         aspect-ratio: 1;
         border: 0;
         cursor: pointer;
     }
-    .primary-navigation.underline-indicators>.active {
-        border: 0;
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(./assets/shared/icon-close.svg);
+    }
+    .mobile-nav-toggle:focus-visible {
+        outline: 1px solid white;
+        outline-offset: 4px;
     }
 }
 
-.primary-navigation a {
-    text-decoration: none;
-}
-
-.primary-navigation a>span {
-    font-weight: 700;
-    margin-right: .5em;
+@media (min-width: 35em) and (max-width: 45em) {
+    .primary-navigation {
+        padding-inline: 3rem;
+    }
+    .primary-navigation a>span {
+        display: none;
+    }
 }
 
 .underline-indicators>* {
