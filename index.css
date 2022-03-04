@@ -527,14 +527,12 @@ backdrop-filter: blur(1.5rem);
         background-position: bottom center;
     }
     /*      Home        */
-    .home {
-        background-image: url(assets/home/background-home-mobile.jpg);
-    }
+    
     
     @media (min-width: 35rem) {
         .home {
             background-position: center center;
-            background-image: url(assets/home/background-home-tablet.jpg);
+            background-image: url(/assets/home/background-home-tablet.jpg);
         }
     }
     
@@ -542,5 +540,5 @@ backdrop-filter: blur(1.5rem);
         .home {
             background-image: url(assets/home/background-home-desktop.jpg);
         }
-    } 
+    }
 }
