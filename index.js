@@ -11,5 +11,6 @@ navToggle.addEventListener("click", () => {
     } else {
         nav.setAttribute("data-visible", false);
         navToggle.setAttribute("aria-expanded", false);
+
     }
 })
